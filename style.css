@@ -79,43 +79,99 @@ footer{border-top:1px solid var(--line);padding:20px 4vw;display:flex;justify-co
 .cursor-dot,.cursor-ring{position:fixed;z-index:100;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);opacity:0}
 .cursor-dot{width:6px;height:6px;background:var(--red)}.cursor-ring{width:30px;height:30px;border:1px solid rgba(255,255,255,.5);transition:width .2s,height .2s}
 @media (pointer:fine){body{cursor:none}a,.project-card{cursor:none}.cursor-ring{transition:width .2s,height .2s,border-color .2s;will-change:left,top,width,height}.cursor-dot{will-change:left,top}}
-@media(max-width:950px){
-  .nav{display:none}.hero{min-height:800px;padding-bottom:80px}.hero-content{width:90vw}.hero h1{font-size:clamp(72px,18vw,150px)}.hero-meta{grid-template-columns:1fr 1fr}.hero-stats{display:none}.hero-actions{grid-column:1 / -1}.scroll-cue{bottom:38px}
-  .project-grid{grid-template-columns:1fr}.project-card:first-child{grid-row:auto}.featured .project-image,.project-image{height:500px}
-  .split-section{grid-template-columns:1fr}.split-section>div,.quote-panel{border-right:0;border-bottom:1px solid var(--line)}.quote-panel{min-height:430px}
-  .contact{grid-template-columns:1fr 1fr}.contact-art{display:none}
+
+@media (max-width:1200px){
+  .site-header{padding:0 3vw}
+  .hero{padding-left:3vw;padding-right:3vw}
+  .section,.contact,footer{padding-left:3vw;padding-right:3vw}
+  .split-section>div,.quote-panel{padding-left:3vw;padding-right:3vw}
 }
-@media(max-width:600px){
-  .site-header{height:62px}.availability{font-size:8px}.hero-topline{top:86px}.hero{min-height:760px;padding:0 6vw 55px}.hero-bg{background-position:center center}.hero-shade{background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.25)),linear-gradient(0deg,rgba(0,0,0,.95),transparent 65%)}.hero-content{width:100%}.hero h1{font-size:20vw}.hero-meta{grid-template-columns:1fr;margin-top:30px}.hero-actions{grid-column:auto;gap:18px;flex-wrap:wrap}.intro{max-width:100%}.text-link{grid-column:auto}.scroll-cue{bottom:28px;font-size:8px}.mouse-icon{width:13px;height:21px}.section{padding:80px 6vw}.section-heading{align-items:start;gap:25px}.section-heading h2{font-size:54px}.project-image,.featured .project-image{height:390px}.split-section>div,.quote-panel{padding:70px 6vw}.split-section h2{font-size:56px;margin-bottom:45px}.contact{padding:80px 6vw;grid-template-columns:1fr;gap:55px}.contact h2{font-size:18vw}footer{padding:18px 6vw;gap:20px;flex-direction:column}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .site-header{padding:0 4vw}
+  .hero{min-height:780px;padding-bottom:80px}
+  .hero-content{width:min(620px,80vw)}
+  .hero h1{font-size:clamp(72px,17vw,150px)}
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-stats{display:none}
+  .hero-actions{grid-column:1 / -1}
+  .scroll-cue{bottom:38px}
+  .project-grid{grid-template-columns:1fr}
+  .featured .project-image,.project-image{height:500px}
+  .split-section{grid-template-columns:1fr}.split-section>div,.quote-panel{border-right:0;border-bottom:1px solid var(--line)}
+  .quote-panel{min-height:430px}
+  .contact{grid-template-columns:1fr 1fr}.contact-art{display:none}
+  .hero-bg{background-position:52% center;background-size:cover}
+}
+
+@media (max-width:760px){
+  .site-header{height:62px;padding:0 6vw}
+  .brand{height:34px}
+  .brand-name{font-size:16px}
+  .availability{font-size:8px}
+  .hero-topline{top:88px;gap:8px}
+  .hero{min-height:720px;padding:0 6vw 55px}
+  .hero-bg{background-position:center center}
+  .hero-shade{background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.25)),linear-gradient(0deg,rgba(0,0,0,.95),transparent 65%)}
+  .hero-content{width:100%}
+  .hero h1{font-size:20vw}
+  .hero-meta{grid-template-columns:1fr;margin-top:30px}
+  .hero-actions{grid-column:auto;gap:18px;flex-wrap:wrap}
+  .intro{max-width:100%}
+  .text-link{grid-column:auto}
+  .scroll-cue{bottom:28px;font-size:8px}.mouse-icon{width:13px;height:21px}
+  .section{padding:80px 6vw}
+  .section-heading{align-items:start;gap:25px;flex-direction:column}
+  .section-heading h2{font-size:54px}
+  .project-image,.featured .project-image{height:390px}
+  .project-info{flex-direction:column;gap:10px}
+  .split-section>div,.quote-panel{padding:70px 6vw}
+  .split-section h2{font-size:56px;margin-bottom:45px}
+  .process-item{grid-template-columns:24px 36px 1fr;gap:8px}
+  .contact{padding:80px 6vw;grid-template-columns:1fr;gap:55px}
+  .contact h2{font-size:18vw}
+  footer{padding:18px 6vw;gap:20px;flex-direction:column}
+}
+
+@media (max-width:520px){
+  .site-header{gap:12px}
+  .availability{display:none}
+  .hero-topline{font-size:8px;letter-spacing:.04em}
+  .eyebrow{font-size:22px}
+  .role{font-size:12px}
+  .intro{font-size:11px}
+  .text-link{font-size:9px;padding-bottom:6px}
+  .section-heading h2,.split-section h2{font-size:42px}
+  .project-label{font-size:8px;top:14px;left:14px}
+  .project-arrow{width:34px;height:34px;right:14px;bottom:14px}
+  .quote-panel blockquote{font-size:22px;max-width:220px}
+  .contact-details a{font-size:9px;line-height:1.5}
+  .contact-copy p{font-size:11px}
+}
+
+@media (max-width:420px){
+  .site-header{height:58px}
+  .brand-name{font-size:15px}
+  .hero{min-height:680px}
+  .hero-topline{top:78px;flex-direction:column;gap:4px}
+  .hero h1{font-size:19vw}
+  .project-image,.featured .project-image{height:320px}
+  .project-info h3{font-size:18px}
+  .contact-cta{width:100%;justify-content:space-between}
 }
 
 .project-card,.process-item,.edu-row,.tags span{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .project-card.is-visible,.process-item.is-visible,.edu-row.is-visible,.tags span.is-visible{opacity:1;transform:none}
 
 /* Responsive hero image treatment */
-@media (min-width: 951px){
-  .hero-bg{
-    background-position:center 34%;
-    background-size:cover;
-  }
+@media (min-width: 981px){
+  .hero-bg{background-position:center 34%;background-size:cover}
 }
-@media (max-width: 950px){
-  .hero-bg{
-    background-position:52% center;
-    background-size:cover;
-  }
+@media (max-width: 980px){
+  .hero-bg{background-position:52% center;background-size:cover}
 }
-@media (max-width: 600px){
-  .site-header{padding:0 6vw}
-  .brand{height:34px}
-  .brand-name{font-size:16px}
-  .hero-bg{
-    background-position:54% center;
-    background-size:cover;
-  }
-  .hero{
-    width:100%;
-    min-height:100svh;
-    padding-top:80px;
-  }
+@media (max-width: 760px){
+  .hero-bg{background-position:54% center;background-size:cover}
+  .hero{width:100%;min-height:100svh;padding-top:80px}
 }
