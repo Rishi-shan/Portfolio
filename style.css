@@ -23,15 +23,7 @@ a{color:inherit;text-decoration:none}
 .nav{display:flex;gap:34px;font:11px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em}
 .nav a{opacity:.75;transition:.25s}.nav a:hover{opacity:1;color:var(--red)}
 .availability{font:10px "DM Mono",monospace;text-transform:uppercase;display:flex;gap:8px;align-items:center}.availability span{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
-.menu-toggle{display:none;position:relative;z-index:30;width:42px;height:42px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.02);border-radius:50%;padding:10px 9px;cursor:pointer}
-.menu-toggle span{display:block;width:100%;height:2px;background:#fff;border-radius:2px;margin:4px 0;transition:transform .25s ease, opacity .25s ease}
-.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.mobile-menu{display:none;position:absolute;left:0;right:0;top:74px;border-top:1px solid rgba(255,255,255,.12);background:rgba(8,8,8,.96);backdrop-filter:blur(18px)}
-.mobile-menu.open{display:block}
-.nav-mobile{display:flex;flex-direction:column;gap:14px;padding:18px 6vw 22px}
-.nav-mobile a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:10px}
+.nav-desktop{display:flex;align-items:center;justify-content:center;gap:28px;min-width:max-content}
 .hero{height:100svh;min-height:720px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 4vw 5vw}
 .hero-bg{position:absolute;inset:0;background-image:url("assets/hero.jpg");background-position:center 35%;background-size:cover;filter:saturate(.82) contrast(1.08);transform:scale(1.02)}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.58) 38%,rgba(0,0,0,.12) 67%,rgba(0,0,0,.48) 100%),linear-gradient(0deg,rgba(0,0,0,.94),transparent 48%,rgba(0,0,0,.45))}
@@ -97,8 +89,7 @@ footer{border-top:1px solid var(--line);padding:20px 4vw;display:flex;justify-co
 }
 
 @media (max-width:980px){
-  .nav-desktop{display:none}
-  .menu-toggle{display:block}
+  .nav-desktop{gap:18px}
   .site-header{padding:0 4vw}
   .hero{min-height:780px;padding-bottom:80px}
   .hero-content{width:min(620px,80vw)}
