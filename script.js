@@ -1,5 +1,24 @@
 const year = document.getElementById("year");
-year.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
 if (window.gsap) {
   gsap.set([".site-header", ".hero-topline", ".eyebrow", ".hero h1", ".hero-meta", ".hero-stats", ".scroll-cue"], { opacity: 0, y: 55 });
