@@ -3,6 +3,30 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.getElementById("site-nav");
+
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener("click", () => {
+    if (!window.matchMedia("(max-width: 760px)").matches) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const isOpen = siteNav.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  });
+
+  siteNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      siteNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation");
+    });
+  });
+}
+
 if (window.gsap) {
   gsap.set([".site-header", ".hero-topline", ".eyebrow", ".hero h1", ".hero-meta", ".hero-stats", ".scroll-cue"], { opacity: 0, y: 55 });
   const introTimeline = gsap.timeline({ delay: 2, defaults: { ease: "power3.out" } })
